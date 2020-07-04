@@ -1107,6 +1107,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rollup/plugin-alias@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "@rollup/plugin-alias@npm:3.1.1"
+  dependencies:
+    slash: ^3.0.0
+  peerDependencies:
+    rollup: ^1.20.0||^2.0.0
+  checksum: 785d8a4283e59bbd76447e2ea5128e34c9ebf59b626841a82d5c8366687439c2fe7d0690be04e73e51ada5264d1efdfd4de8ec2528f4f9428f9541040311262c
+  languageName: node
+  linkType: hard
+
 "@rollup/plugin-babel@npm:^5.0.4":
   version: 5.0.4
   resolution: "@rollup/plugin-babel@npm:5.0.4"
@@ -2262,6 +2273,7 @@ fsevents@~2.1.2:
     "@babel/plugin-transform-runtime": ^7.10.4
     "@babel/preset-env": ^7.10.4
     "@babel/runtime": ^7.10.4
+    "@rollup/plugin-alias": ^3.1.1
     "@rollup/plugin-babel": ^5.0.4
     "@rollup/plugin-commonjs": ^13.0.0
     "@rollup/plugin-node-resolve": ^8.1.0
@@ -3060,6 +3072,13 @@ fsevents@~2.1.2:
     mime: ^2.3.1
     totalist: ^1.0.0
   checksum: 2cba853bf9827806bd04a52e9858284018ed5b71e2a0012e60a800940027c150de14fb5229fcf22393e261c739725ffcc2bacd2e8c714a5e8df15f26f1089ecd
+  languageName: node
+  linkType: hard
+
+"slash@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "slash@npm:3.0.0"
+  checksum: fc3e8597d822ee3ba6cd76e9b001cd5be315f9b81c3a03a29bb611c003d1484e3b29a9e7bc020298fa669b585ff7c9268f44513f60c186216eb6af3111a3e838
   languageName: node
   linkType: hard
 
