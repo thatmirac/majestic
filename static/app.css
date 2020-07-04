@@ -16,21 +16,6 @@
 	src: url('fonts/SF-UI-Display-Semibold.otf');
 }
 
-.fade {
-	animation: fadeInAnimation ease 1s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-}
-
-@keyframes fadeInAnimation {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
 ::-webkit-scrollbar {
 	width: 10px;
 }
@@ -588,6 +573,7 @@ header {
 	.showcase h1,
 	.showcase h3,
 	.subtitle,
+	.stack,
 	.resolution,
 	.credits-title,
 	.credits-text h1 {
@@ -639,6 +625,7 @@ header {
 	.showcase h1,
 	.showcase h3,
 	.subtitle,
+	.stack,
 	.resolution,
 	.credits-title,
 	.credits-text h1 {
