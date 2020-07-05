@@ -26,7 +26,7 @@
 		designed by Mirac." />
 	<meta
 		property="og:image"
-		content="https://madebymirac.com/assets/card.png" />
+		content="https://madebymirac.com/assets/card.jpg" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
@@ -40,6 +40,6 @@
 		designed by Mirac." />
 	<meta
 		property="twitter:image"
-		content="https://madebymirac.com/assets/card.png" />
+		content="https://madebymirac.com/assets/card.jpg" />
 	<meta name="twitter:image:alt" content="Mirac Logo Card" />
 </svelte:head>
