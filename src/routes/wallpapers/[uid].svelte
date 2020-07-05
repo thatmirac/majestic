@@ -1,7 +1,7 @@
 <script context="module">
 	export async function preload({ params, query }) {
 		const uid = params.uid;
-		let data;
+		let data = {};
 
 		let reference = await this.fetch(`wallpapers/${uid}.json`);
 		reference = await reference.json();
@@ -66,14 +66,20 @@
 				tablet: tablet,
 				desktop: desktop,
 			};
+
+			let previewCard = wallpaper.data.preview_card.url
+				? wallpaper.data.preview_card.url
+				: 'https://madebymirac.com/assets/card.jpg';
 		}
 
-		return { data };
+		return { data, uid, previewCard };
 	}
 </script>
 
 <script>
 	export let data;
+	export let uid;
+	export let previewCard;
 </script>
 
 <body>
@@ -210,3 +216,34 @@
 		</div>
 	</div>
 </body>
+
+<svelte:head>
+	<!-- Primary Meta Tags -->
+	<title>Made by Mirac</title>
+	<link rel="canonical" href="https://madebymirac.com/wallpapers/{uid}" />
+	<meta name="title" content="Made by Mirac" />
+	<meta
+		name="description"
+		content="Home of original wallpapers designed with love, made by Mirac" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://madebymirac.com/{uid}" />
+	<meta property="og:title" content="Made by Mirac" />
+	<meta
+		property="og:description"
+		content="Home of original wallpapers designed with love, made by Mirac" />
+	<meta property="og:image" content={previewCard} />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://madebymirac.com/{uid}" />
+	<meta property="twitter:title" content="Made by Mirac" />
+	<meta name="twitter:creator" content="@thatmirac" />
+	<meta name="twitter:creator:id" content="1153786059718889472" />
+	<meta
+		property="twitter:description"
+		content="Home of original wallpapers designed with love, made by Mirac" />
+	<meta property="twitter:image" content={previewCard} />
+	<meta name="twitter:image:alt" content="Mirac Logo Card" />
+</svelte:head>
