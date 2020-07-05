@@ -2,6 +2,7 @@
 	export async function preload({ params, query }) {
 		const uid = params.uid;
 		let data = {};
+		let previewCard = 'https://madebymirac.com/assets/card.jpg';
 
 		let reference = await this.fetch(`wallpapers/${uid}.json`);
 		reference = await reference.json();
@@ -67,9 +68,9 @@
 				desktop: desktop,
 			};
 
-			let previewCard = wallpaper.data.preview_card.url
-				? wallpaper.data.preview_card.url
-				: 'https://madebymirac.com/assets/card.jpg';
+			if (wallpaper.data.preview_card.url) {
+				previewCard = wallpaper.data.preview_card.url;
+			}
 		}
 
 		return { data, uid, previewCard };
