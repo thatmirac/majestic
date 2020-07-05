@@ -1550,15 +1550,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-fetch@npm:^3.0.4":
-  version: 3.0.5
-  resolution: "cross-fetch@npm:3.0.5"
-  dependencies:
-    node-fetch: 2.6.0
-  checksum: 99f0f4ae222c611bfd45c176e95335ffb4046c662e349afcdcfad8edf9a76cefb68e6dfb6707cddf0ad23d231290346a76d70ba1205f8af4cb335eb52321b4bc
-  languageName: node
-  linkType: hard
-
 "cross-spawn@npm:^6.0.5":
   version: 6.0.5
   resolution: "cross-spawn@npm:6.0.5"
@@ -2279,10 +2270,10 @@ fsevents@~2.1.2:
     "@rollup/plugin-node-resolve": ^8.1.0
     "@rollup/plugin-replace": ^2.3.3
     compression: ^1.7.4
+    node-fetch: ^2.6.0
     npm-run-all: ^4.1.5
     polka: next
     prettier: ^2.0.5
-    prismic-javascript: ^3.0.1
     rollup: ^2.18.2
     rollup-plugin-svelte: ^5.2.3
     rollup-plugin-terser: ^6.1.0
@@ -2412,7 +2403,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:2.6.0":
+"node-fetch@npm:^2.6.0":
   version: 2.6.0
   resolution: "node-fetch@npm:2.6.0"
   checksum: dd9f586a9f7ddb7dd94d2aba9cb693d32f5001e9850098512fbc8a4cbdd56838afa08ed0a6725b9fce9b01ec12b713e622cbfc16d92762d8b937b238330a632a
@@ -2685,15 +2676,6 @@ fsevents@~2.1.2:
   bin:
     prettier: bin-prettier.js
   checksum: d249d89361870a29b20e8b268cb09e908490b8c9e21f70393d12a213701f29ba7e95b7f9ce0ad63929c16ce475176742481911737ae3da4a498873e4a3b90990
-  languageName: node
-  linkType: hard
-
-"prismic-javascript@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "prismic-javascript@npm:3.0.1"
-  dependencies:
-    cross-fetch: ^3.0.4
-  checksum: b77f3289818063dbae092b30df1f2ff239f1187b12aeabb245c126438a67c9d918dfb720cbc15ecc2e3cef6e4c2130dc6ba9a5cbf75630d0899e83df22dcac59
   languageName: node
   linkType: hard
 
