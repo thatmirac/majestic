@@ -55,10 +55,14 @@
 				}
 			});
 
+			if (wallpaper.data.preview_card.url) {
+				previewCard = wallpaper.data.preview_card.url;
+			}
+
 			data = {
 				name: wallpaper.data.name[0].text,
 				date: date,
-				header: wallpaper.data.body1[0].primary.image.url,
+				header: previewCard,
 				preview: wallpaper.data.preview.url,
 				screenshots: wallpaper.data.screenshots,
 				related: related,
@@ -67,20 +71,15 @@
 				tablet: tablet,
 				desktop: desktop,
 			};
-
-			if (wallpaper.data.preview_card.url) {
-				previewCard = wallpaper.data.preview_card.url;
-			}
 		}
 
-		return { data, uid, previewCard };
+		return { data, uid };
 	}
 </script>
 
 <script>
 	export let data;
 	export let uid;
-	export let previewCard;
 </script>
 
 <body>
@@ -234,7 +233,7 @@
 	<meta
 		property="og:description"
 		content="Home of original wallpapers designed with love, made by Mirac" />
-	<meta property="og:image" content={previewCard} />
+	<meta property="og:image" content={data.header} />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
@@ -245,6 +244,6 @@
 	<meta
 		property="twitter:description"
 		content="Home of original wallpapers designed with love, made by Mirac" />
-	<meta property="twitter:image" content={previewCard} />
+	<meta property="twitter:image" content={data.header} />
 	<meta name="twitter:image:alt" content="Mirac Logo Card" />
 </svelte:head>

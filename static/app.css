@@ -158,7 +158,6 @@ header {
 	width: 100%;
 	object-fit: cover;
 	position: absolute;
-	margin: -85% 0;
 	z-index: 1;
 }
 
@@ -614,6 +613,38 @@ header {
 }
 
 @media (prefers-color-scheme: light) {
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: rgb(145, 145, 145);
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: rgb(129, 129, 129);
+	}
+
+	::-moz-scrollbar {
+		width: 10px;
+	}
+
+	::-moz-scrollbar-track {
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	::-moz-scrollbar-thumb {
+		background: rgb(145, 145, 145);
+	}
+
+	::-moz-scrollbar-thumb:hover {
+		background: rgb(129, 129, 129);
+	}
+
 	.logo-container img,
 	#miracprofile,
 	#githubicon {
