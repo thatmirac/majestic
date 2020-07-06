@@ -1,0 +1,25 @@
+name: VPS Deployment
+
+on: [push]
+
+jobs:
+    build:
+        runs-on: self-hosted
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - run: yarn global add pm2
+            - run: yarn
+            - run: yarn run build
+            - run: /home/renai/.yarn/bin/pm2 reload ecosystem.config.js
+            - run: /home/renai/.yarn/bin/pm2 save
+              env:
+                  CI: true
