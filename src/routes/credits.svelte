@@ -44,9 +44,9 @@
 
 <svelte:head>
 	<!-- Primary Meta Tags -->
-	<title>Made by Mirac | Credits</title>
+	<title>Credits | madebymirac.com</title>
 	<link rel="canonical" href="https://madebymirac.com/credits" />
-	<meta name="title" content="Made by Mirac | Credits" />
+	<meta name="title" content="Credits | madebymirac.com" />
 	<meta
 		name="description"
 		content="Home of original content that has been thoughtfully planned and
@@ -55,7 +55,7 @@
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://madebymirac.com/credits" />
-	<meta property="og:title" content="Made by Mirac | Credits" />
+	<meta property="og:title" content="Credits | madebymirac.com" />
 	<meta
 		property="og:description"
 		content="Home of original content that has been thoughtfully planned and
@@ -67,7 +67,7 @@
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://madebymirac.com/credits" />
-	<meta property="twitter:title" content="Made by Mirac | Credits" />
+	<meta property="twitter:title" content="Credits | madebymirac.com" />
 	<meta name="twitter:creator" content="@thatmirac" />
 	<meta name="twitter:creator:id" content="1153786059718889472" />
 	<meta

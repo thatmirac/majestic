@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>{status}</title>
+	<title>{status} | madebymirac.com</title>
 </svelte:head>
 
 <div class="showcase">
