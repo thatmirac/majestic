@@ -146,7 +146,7 @@
 						<div class="download-button">
 							<a
 								href={data.mobile.primary.image.url.slice(0, data.mobile.primary.image.url.indexOf('?auto=compress'))}
-								style="color: rgba(255, 255, 255, 0.9);"
+								style="color: rgba(255, 255, 255, 1);"
 								download>
 								<p>Download</p>
 							</a>
@@ -162,8 +162,8 @@
 						<div class="resolution">2388 × 1668</div>
 						<div class="download-button">
 							<a
-								href={data.tablet.primary.image.url}
-								style="color: rgba(255, 255, 255, 0.9);"
+								href={data.tablet.primary.image.url.slice(0, data.tablet.primary.image.url.indexOf('?auto=compress'))}
+								style="color: rgba(255, 255, 255, 1);"
 								download>
 								<p>Download</p>
 							</a>
@@ -179,8 +179,8 @@
 						<div class="resolution">2560 × 1440</div>
 						<div class="download-button" download>
 							<a
-								href={data.desktop.primary.image.url}
-								style="color: rgba(255, 255, 255, 0.9);"
+								href={data.desktop.primary.image.url.slice(0, data.desktop.primary.image.url.indexOf('?auto=compress'))}
+								style="color: rgba(255, 255, 255, 1);"
 								download>
 								<p>Download</p>
 							</a>

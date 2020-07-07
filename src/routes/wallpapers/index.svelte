@@ -18,31 +18,29 @@
 	export let wallpapers;
 </script>
 
-<main>
-	<div class="showcase">
-		<span>
-			<h1>WALLPAPERS</h1>
-			<h2>made by Mirac</h2>
-		</span>
-	</div>
-	<div class="wallprev-container">
-		<div class="wallprev">
-			{#each wallpapers as post}
-				<a rel="prefetch" href={`wallpapers/${post.uid}`}>
-					<img
-						src={post.data.preview.url}
-						alt={post.data.name[0].text} />
-				</a>
-			{/each}
-		</div>
-		<div class="footer">
-			<p>©{new Date().getFullYear()}, Mirac</p>
-			<a rel="prefetch" href="credits">
-				<p>Credits</p>
+<div class="showcase">
+	<span>
+		<h1>WALLPAPERS</h1>
+		<h2>made by Mirac</h2>
+	</span>
+</div>
+<div class="wallprev-container">
+	<div class="wallprev">
+		{#each wallpapers as post}
+			<a rel="prefetch" href={`wallpapers/${post.uid}`}>
+				<img
+					src={`${post.data.preview.url.substring(0, post.data.preview.url.indexOf('&w'))}&w=191&h=191`}
+					alt={post.data.name[0].text} />
 			</a>
-		</div>
+		{/each}
 	</div>
-</main>
+	<div class="footer">
+		<p>©{new Date().getFullYear()}, Mirac</p>
+		<a rel="prefetch" href="credits">
+			<p>Credits</p>
+		</a>
+	</div>
+</div>
 
 <svelte:head>
 	<!-- Primary Meta Tags -->

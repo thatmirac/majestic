@@ -366,9 +366,10 @@ header {
 
 .download-button {
 	display: inline-block;
-	background: rgb(0, 122, 255);
+	background: rgb(1, 108, 223);
 	color: white;
 	font-size: 11pt;
+	font-weight: 500;
 	width: 100%;
 	text-align: center;
 	padding-left: auto;
@@ -486,7 +487,7 @@ header {
 	.wallprev {
 		grid-template-columns: repeat(3, 1fr);
 	}
-	
+
 	.get-button-container {
 		display: none;
 		width: 100%;
@@ -566,7 +567,7 @@ header {
 		color: rgba(255, 255, 255, 0.9);
 	}
 	.credits-text p {
-		color: rgba(255, 255, 255, 0.25);
+		color: rgba(255, 255, 255, 0.65);
 	}
 	.footer p,
 	.footer a,
@@ -650,7 +651,7 @@ header {
 		color: rgb(0, 0, 0, 0.9);
 	}
 	.credits-text p {
-		color: rgb(0, 0, 0, 0.25);
+		color: rgb(0, 0, 0, 0.65);
 	}
 	.footer p,
 	.footer a,
