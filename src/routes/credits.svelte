@@ -16,13 +16,13 @@
 						<img src="assets/icons/twitter.png" alt="twitter" />
 					</a>
 					<a href="https://github.com/Renaitare">
-						<img src="assets/icons/github.png" alt="github" />
+						<img src="assets/icons/github.png" alt="github" id="githubicon" />
 					</a>
 				</div>
 			</div>
 		</div>
 		<div class="credits-credits-section">
-			<img src="assets/profiles/mirac.png" alt="profile" />
+			<img src="assets/profiles/mirac.png" alt="profile" id="miracprofile" />
 			<div class="credits-text">
 				<p>F R O N T E N D &nbsp; D E V E L O P M E N T</p>
 				<h1>Mirac</h1>
