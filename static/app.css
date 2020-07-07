@@ -465,6 +465,11 @@ header {
 	font-size: 10pt;
 }
 
+#wppagefooter {
+	margin-left: 24px;
+	margin-right: 24px;
+}
+
 @media only screen and (max-width: 1024px) {
 	.wallprev-container {
 		width: 75vw;
