@@ -1,11 +1,11 @@
 module.exports = {
 	apps: [
 		{
-			name: 'mellow',
+			name: 'majestic',
 			script: '__sapper__/build',
 			env: {
-				NODE_ENV: 'production',
-				PORT: 4000,
+				NODE_ENV: 'development',
+				PORT: 3000,
 			},
 		},
 	],
