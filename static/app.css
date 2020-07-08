@@ -387,8 +387,7 @@ header {
 .related-wrapper {
 	padding-bottom: 32px;
 	padding-left: 24px;
-	overflow-x: scroll;
-	overflow-y: hidden;
+	overflow-x: visible;
 	white-space: nowrap;
 	-webkit-overflow-scrolling: touch;
 }
@@ -528,6 +527,11 @@ header {
 
 	.related-wrapper::-webkit-scrollbar {
 		display: none;
+	}
+
+	.related-wrapper {
+		overflow-x: scroll;
+		overflow-y: hidden;
 	}
 
 	.footer {
