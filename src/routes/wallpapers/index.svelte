@@ -29,7 +29,7 @@
 		{#each wallpapers as post}
 			<a rel="prefetch" href={`wallpapers/${post.uid}`}>
 				<img
-					src={`${post.data.preview.url.substring(0, post.data.preview.url.indexOf('&w'))}&w=191&h=191`}
+					src={`${post.data.preview.url.substring(0, post.data.preview.url.indexOf('auto'))}q=80&rect=0,0,368,368&w=191&h=191`}
 					alt={post.data.name[0].text} />
 			</a>
 		{/each}
