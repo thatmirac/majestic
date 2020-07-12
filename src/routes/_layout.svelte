@@ -4,7 +4,7 @@
 
 <header>
 	<div class="logo-container">
-		<a href=".">
+		<a href="/wallpapers/">
 			<img src="assets/header.png" alt="Home" />
 		</a>
 	</div>
