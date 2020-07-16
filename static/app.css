@@ -36,6 +36,14 @@
 	box-sizing: border-box;
 	list-style: none;
 	text-decoration: none;
+	-webkit-user-drag: none;
+  	-khtml-user-drag: none;
+  	-moz-user-drag: none;
+  	-o-user-drag: none;
+	user-drag: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
 }
 
 body {
@@ -44,9 +52,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
-	-webkit-user-select: none;
-	-webkit-tap-highlight-color: transparent;
-	-webkit-touch-callout: none;
 }
 
 header {
@@ -77,6 +82,15 @@ header {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+	transition: 0.4s cubic-bezier(.25,.75,.5,1);
+}
+
+.logo-container img:hover {
+	transform: scale(1.1);
+}
+
+.logo-container img:active {
+	transform: scale(0.9);
 }
 
 .seperator {
@@ -95,6 +109,7 @@ header {
 	justify-content: center;
 	align-items: center;
 	background: rgb(0, 0, 0);
+	animation: transitionIn 0.2s cubic-bezier(.25,.75,.5,1);
 }
 
 .showcase h1 {
@@ -126,6 +141,16 @@ header {
 .wallprev img {
 	width: 100%;
 	height: auto;
+	transition: 0.2s cubic-bezier(.25,.75,.5,1);
+	animation: transitionIn 0.2s cubic-bezier(.25,.75,.5,1);
+}
+
+.wallprev img:hover {
+	transform: scale(0.95);
+}
+
+.wallprev img:active {
+	transform: scale(0.9);
 }
 
 .top-image {
@@ -377,6 +402,11 @@ header {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	border-radius: 64px;
+	transition: 0.2s cubic-bezier(.25,.75,.5,1);
+}
+
+.download-button:active {
+	transform: scale(0.95);
 }
 
 #related-title {
@@ -398,6 +428,15 @@ header {
 	width: 128px;
 	border-radius: 8px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
+	transition: 0.2s cubic-bezier(.25,.75,.5,1);
+}
+
+.related-wrapper img:hover {
+	transform: scale(1.1);
+}
+
+.related-wrapper img:active {
+	transform: scale(1.05);
 }
 
 #creditspage {
@@ -485,6 +524,36 @@ header {
 
 	.wallprev {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.wallprev img:hover {
+		transform: none;
+	}
+	
+	.wallprev img:active {
+		opacity: 50%;
+	}
+
+	.logo-container img:hover {
+		transform: none;
+	}
+
+	.logo-container img:active {
+		opacity: 25%;
+		transform: scale(0.75);
+	}
+
+	.related-wrapper img:hover {
+		transform: none;
+	}
+	
+	.related-wrapper img:active {
+		transform: none;
+	}	
+
+	.download-button:active {
+		transform: none;
+		opacity: 50%;
 	}
 
 	.get-button-container {
