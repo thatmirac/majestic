@@ -1,24 +1,21 @@
-name: VPS Deployment
+name: Continuous Deployment
 
-on: [push]
+on:
+    push:
+        branches: [master]
 
 jobs:
     build:
         runs-on: self-hosted
 
-        strategy:
-            matrix:
-                node-version: [12.x]
-
         steps:
             - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-            - run: yarn
-            - run: yarn build
-            - run: /home/renai/.yarn/bin/pm2 reload ecosystem.config.js
-            - run: /home/renai/.yarn/bin/pm2 save
-              env:
-                  CI: true
+            - name: Install Dependencies and Build Whistler
+              run: |
+                  yarn
+                  yarn build
+
+            - name: Reload the PM2 Ecosystem
+              run: |
+                  pm2 reload ecosystem.config.js
+                  pm2 save
