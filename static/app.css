@@ -627,6 +627,9 @@ header {
 	#githubicon {
 		filter: invert(0);
 	}
+	#renaiprofile {
+		filter: invert(1);
+	}
 	header {
 		background: rgba(0, 0, 0, 0.8);
 	}
@@ -710,6 +713,9 @@ header {
 	#miracprofile,
 	#githubicon {
 		filter: invert(1);
+	}
+	#renaiprofile {
+		filter: invert(0);
 	}
 	header {
 		background: rgb(253, 253, 253, 0.8);

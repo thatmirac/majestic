@@ -3,7 +3,7 @@
 		<h1>CREDITS</h1>
 	</div>
 	<div class="credits-credits-section">
-		<img src="assets/profiles/renai.png" alt="profile" />
+		<img src="assets/profiles/renai.png" alt="profile" id="renaiprofile" />
 		<div class="credits-text">
 			<p>B A C K E N D &nbsp; D E V E L O P M E N T</p>
 			<h1>Renaitare</h1>
