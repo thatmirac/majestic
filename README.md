@@ -11,6 +11,5 @@ It operates using Sapper + Svelte and supports the latest web standards includin
 #### So why is this open source?
 It adds to the vast library of Sapper/Svelte projects that people can use to learn and build their own things from.
 This does not mean that you may simply copy the code or design and use it as your own.
-That is a scummy thing to do and violates the terms of the 'Unlicense'.
 
 #### The server is automatically deployed onto a VPS and hosted at https://madebymirac.com/
