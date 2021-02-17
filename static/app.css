@@ -515,7 +515,7 @@ header {
 	font-size: 8pt;
 }
 
-#wppagefooter {
+#wppagefooter, #wppagenotice {
 	margin-left: 24px;
 	margin-right: 24px;
 }
