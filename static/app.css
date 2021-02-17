@@ -504,6 +504,17 @@ header {
 	font-size: 10pt;
 }
 
+.copyright-notice {
+	display: flex;
+	margin-top: 1em;
+	margin-bottom: 12px;
+}
+
+.copyright-notice p {
+	color: rgba(255, 255, 255, 0.2);
+	font-size: 8pt;
+}
+
 #wppagefooter {
 	margin-left: 24px;
 	margin-right: 24px;
@@ -603,7 +614,7 @@ header {
 		overflow-y: hidden;
 	}
 
-	.footer {
+	.footer, .copyright-notice {
 		margin-left: 0.5em;
 		margin-right: 0.5em;
 	}
@@ -615,7 +626,7 @@ header {
 		padding-bottom: 32px;
 	}
 
-	#wppagefooter {
+	#wppagefooter, #wppagenotice {
 		margin-left: 24px;
 		margin-right: 24px;
 	}
@@ -647,7 +658,8 @@ header {
 	}
 	.footer p,
 	.footer a,
-	.credits-section p {
+	.credits-section p,
+	.copyright-notice p {
 		color: rgba(255, 255, 255, 0.5);
 	}
 	.seperator {
@@ -734,7 +746,8 @@ header {
 	}
 	.footer p,
 	.footer a,
-	.credits-section p {
+	.credits-section p,
+	.copyright-notice p {
 		color: rgb(0, 0, 0, 0.5);
 	}
 	.seperator {
