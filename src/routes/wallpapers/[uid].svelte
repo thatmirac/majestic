@@ -208,7 +208,7 @@
 		<div class="seperator" />
 	{/if}
 	<div class="copyright-notice" id="wppagenotice">
-		<p>All madebymirac content is for personal use only and may not be used for any sort of commercial purpose.</p>
+		<p>All madebymirac content is for personal use only and may not be redistributed or used for any sort of commercial purpose.</p>
 	</div>
 	<div class="footer" id="wppagefooter">
 		<p>©{new Date().getFullYear()}, Mirac</p>

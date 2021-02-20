@@ -35,7 +35,7 @@
 		{/each}
 	</div>
 	<div class="copyright-notice">
-		<p>All madebymirac content is for personal use only and may not be used for any sort of commercial purpose.</p>
+		<p>All madebymirac content is for personal use only and may not be redistributed or used for any sort of commercial purpose.</p>
 	</div>
 	<div class="footer">
 		<p>©{new Date().getFullYear()}, Mirac</p>
