@@ -11,7 +11,7 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Stop older Docker service
-              run: docker stop majestic
+              run: docker rm -f majestic
 
             - name: Build new Docker image
               run: docker build -t mirac/majestic .
