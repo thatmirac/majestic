@@ -55,8 +55,8 @@ export async function get(req, res, next) {
 						}),
 						assets: {
 							banner: `https://cms.atale.me/assets/${lookup.banner.id}?quality=80`,
-							mobile: lookup.mobile_asset ? `https://cms.atale.me/assets/${lookup.mobile_asset.id}?download` : null,
-							desktop: lookup.desktop_asset ? `https://cms.atale.me/assets/${lookup.desktop_asset.id}?download` : null,
+							mobile: lookup.mobile_asset ? `https://cms.atale.me/assets/${lookup.mobile_asset.id}` : null,
+							desktop: lookup.desktop_asset ? `https://cms.atale.me/assets/${lookup.desktop_asset.id}` : null,
 							screenshots: lookup.screenshots.map(screenshot => {
 								return { id: `https://cms.atale.me/assets/${screenshot.directus_files_id}?quality=80` }
 							})

@@ -47,6 +47,15 @@
 </script>
 
 <script lang="ts">
+	import { stores } from '@sapper/app';
+	import Parser from 'ua-parser-js';
+
+	const { preloading, page, session } = stores();
+	const parser = new Parser();
+	parser.setUA($session['user-agent']);
+
+	let mobile = parser.getResult().device['type'] == 'mobile';
+
 	interface ApiData {
 		name: string;
 		date: string;
@@ -144,12 +153,20 @@
 					</div>
 					<div class="resolution">1125 × 2436</div>
 					<div class="download-button">
-						<a
-							href={data.assets.mobile}
-							style="color: rgba(255, 255, 255, 1);"
-							download={`${data.name}.png`}>
-							<p>Download</p>
-						</a>
+						{#if mobile}
+							<a
+								href={data.assets.mobile}
+								style="color: rgba(255, 255, 255, 1);">
+								<p>Download</p>
+							</a>
+						{:else}
+							<a
+								href={`${data.assets.mobile}?download`}
+								style="color: rgba(255, 255, 255, 1);"
+								download={`${data.name}.png`}>
+								<p>Download</p>
+							</a>
+						{/if}
 					</div>
 				</div>
 			{/if}
@@ -160,13 +177,21 @@
 						<div class="computer-stand" />
 					</div>
 					<div class="resolution">2560 × 1440</div>
-					<div class="download-button" download>
-						<a
-							href={data.assets.desktop}
-							style="color: rgba(255, 255, 255, 1);"
-							download={`${data.name}.png`}>
-							<p>Download</p>
-						</a>
+					<div class="download-button">
+						{#if mobile}
+							<a
+								href={data.assets.desktop}
+								style="color: rgba(255, 255, 255, 1);">
+								<p>Download</p>
+							</a>
+						{:else}
+							<a
+								href={`${data.assets.desktop}?download`}
+								style="color: rgba(255, 255, 255, 1);"
+								download={`${data.name}.png`}>
+								<p>Download</p>
+							</a>
+						{/if}
 					</div>
 				</div>
 			{/if}
