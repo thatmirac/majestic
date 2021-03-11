@@ -1,91 +1,92 @@
-<script context="module">
+<script context="module" lang="ts">
+	interface ApiData {
+		name: string;
+		date: string;
+		assets: Assets;
+		credits?: Credits;
+		related: Related[];
+	}
+
+	interface Credits {
+		text: string;
+		link: string;
+		image: string;
+	}
+
+	interface Assets {
+		banner: string;
+		mobile?: string;
+		desktop?: string;
+		screenshots: Screenshot[];
+	}
+
+	interface Screenshot {
+		id: string;
+	}
+
+	interface Related {
+		id: string;
+		asset: string;
+	}
+
 	export async function preload({ params, query }) {
 		const uid = params.uid;
-		let data = {};
-		let previewCard = 'https://madebymirac.com/assets/card.jpg';
+		const res = await this.fetch(`api/${uid}`);
+		const lookup: { data: ApiData } = await res.json();
+		const data = lookup.data;
 
-		let reference = await this.fetch(`wallpapers/${uid}.json`);
-		reference = await reference.json();
-		reference = reference.reference;
-
-		let wallpaper = await this.fetch(
-			`https://wallpapers.prismic.io/api/v2/documents/search?ref=${reference}&q=[[at(my.wallpaper.uid,"${uid}")]]&fetchLinks=wallpaper.preview,wallpaper.name`
-		);
-
-		wallpaper = await wallpaper.json();
-		wallpaper = wallpaper.results[0];
-		if (wallpaper) {
-			let date = (function() {
-				let date = new Date(wallpaper.data.date);
-				let month = date
-					.getMonth()
-					.toString()
-					.padStart(2, '0');
-				let day = date
-					.getDate()
-					.toString()
-					.padStart(2, '0');
-				return `${day}.${month}.${date.getFullYear()}`;
-			})();
-
-			let credits = wallpaper.data.body.find(slice => {
-				return slice.slice_type === 'credits';
-			});
-
-			let mobile = wallpaper.data.body1.find(slice => {
-				return slice.slice_type === 'mobile_image';
-			});
-
-			let tablet = wallpaper.data.body1.find(slice => {
-				return slice.slice_type === 'tablet_image';
-			});
-
-			let desktop = wallpaper.data.body1.find(slice => {
-				return slice.slice_type === 'desktop_image';
-			});
-
-			let related = [];
-			wallpaper.data.related.forEach(data => {
-				if (data.wallpaper.data) {
-					related.push({
-						name: data.wallpaper.data.name[0].text,
-						preview: data.wallpaper.data.preview.url,
-						uid: data.wallpaper.uid,
-					});
-				}
-			});
-
-			if (wallpaper.data.preview_card.url) {
-				previewCard = wallpaper.data.preview_card.url;
-			}
-
-			data = {
-				name: wallpaper.data.name[0].text,
-				date: date,
-				header: previewCard,
-				preview: wallpaper.data.preview.url,
-				screenshots: wallpaper.data.screenshots,
-				related: related,
-				credits: credits,
-				mobile: mobile,
-				tablet: tablet,
-				desktop: desktop,
-			};
+		let credit_message: string;
+		let credit_author: string;
+		if (data.credits && data.credits.text) {
+			credit_message = data.credits.text.substring(0, data.credits.text.indexOf('{') + 1)
+			credit_author = data.credits.text.substring(data.credits.text.indexOf('{') + 1, data.credits.text.indexOf('}'))
 		}
 
-		return { data, uid };
+		return { data, credit_message, credit_author, uid };
 	}
 </script>
 
-<script>
-	export let data;
-	export let uid;
+<script lang="ts">
+	interface ApiData {
+		name: string;
+		date: string;
+		assets: Assets;
+		credits?: Credits;
+		related: Related[];
+	}
+
+	interface Credits {
+		text: string;
+		link: string;
+		image: string;
+	}
+
+	interface Assets {
+		banner: string;
+		mobile?: string;
+		desktop?: string;
+		screenshots: Screenshot[];
+	}
+
+	interface Screenshot {
+		id: string;
+	}
+
+	interface Related {
+		id: string;
+		asset: string;
+	}
+
+	export let uid: string;
+	export let data: ApiData;
+	export let credit_message: string;
+	export let credit_author: string;
 </script>
 
 <div class="wallprev-container">
 	<div class="top-image">
 		<div class="top-image-background">
-			<img src={data.header} alt={`${data.name} Header`} />
+			<img src={data.assets.banner} alt={`${data.name} Header`} />
 		</div>
 		<div class="top-image-overlay" />
 		<div class="top-image-elements">
@@ -104,15 +105,15 @@
 			</div>
 		</div>
 	</div>
-	{#if data.credits}
+	{#if credit_message}
 		<div class="credits-section">
-			<p>{data.credits.primary.text[0].text}</p>
+			<p>{credit_message}</p>
 			<div class="user">
 				<img
-					src={data.credits.primary.image.url}
-					alt={data.credits.primary.author[0].text} />
-				<a href={data.credits.primary.link.url}>
-					{data.credits.primary.author[0].text}
+					src={data.credits.image}
+					alt={credit_author} />
+				<a href={data.credits.link}>
+					{credit_author}
 				</a>
 			</div>
 		</div>
@@ -123,8 +124,8 @@
 			<h1>Preview</h1>
 		</div>
 		<div class="screenshots-wrapper">
-			{#each data.screenshots as shot}
-				<img src={shot.image.url} alt={`${data.name} Image`} />
+			{#each data.assets.screenshots as shot}
+				<img src={shot.id} alt={`${data.name} Image`} />
 			{/each}
 			<div class="spacer" />
 		</div>
@@ -135,7 +136,7 @@
 			<h1>Sizes</h1>
 		</div>
 		<div class="download-grid">
-			{#if data.mobile}
+			{#if data.assets.mobile}
 				<div class="download-container-phone">
 					<div class="phone">
 						<div class="phone-shape" />
@@ -144,32 +145,15 @@
 					<div class="resolution">1125 × 2436</div>
 					<div class="download-button">
 						<a
-							href={data.mobile.primary.image.url.slice(0, data.mobile.primary.image.url.indexOf('?auto=compress'))}
+							href={data.assets.mobile}
 							style="color: rgba(255, 255, 255, 1);"
-							download>
+							download={`${data.name}.png`}>
 							<p>Download</p>
 						</a>
 					</div>
 				</div>
 			{/if}
-			{#if data.tablet}
-				<div class="download-container-tablet">
-					<div class="tablet">
-						<div class="tablet-shape" />
-						<div class="tablet-home-button" />
-					</div>
-					<div class="resolution">2388 × 1668</div>
-					<div class="download-button">
-						<a
-							href={data.tablet.primary.image.url.slice(0, data.tablet.primary.image.url.indexOf('?auto=compress'))}
-							style="color: rgba(255, 255, 255, 1);"
-							download>
-							<p>Download</p>
-						</a>
-					</div>
-				</div>
-			{/if}
-			{#if data.desktop}
+			{#if data.assets.desktop}
 				<div class="download-container-computer">
 					<div class="computer">
 						<div class="computer-shape" />
@@ -178,9 +162,9 @@
 					<div class="resolution">2560 × 1440</div>
 					<div class="download-button" download>
 						<a
-							href={data.desktop.primary.image.url.slice(0, data.desktop.primary.image.url.indexOf('?auto=compress'))}
+							href={data.assets.desktop}
 							style="color: rgba(255, 255, 255, 1);"
-							download>
+							download={`${data.name}.png`}>
 							<p>Download</p>
 						</a>
 					</div>
@@ -196,10 +180,10 @@
 			</div>
 			<div class="related-wrapper">
 				{#each data.related as wallpaper}
-					<a href={`/wallpapers/${wallpaper.uid}`}>
+					<a href={`/wallpapers/${wallpaper.id}`}>
 						<img
-							src={wallpaper.preview}
-							alt={`${wallpaper.name} Image`} />
+							src={wallpaper.asset}
+							alt={`${wallpaper.id} Image`} />
 					</a>
 				{/each}
 				<div class="spacer" />
@@ -234,7 +218,7 @@
 	<meta
 		property="og:description"
 		content="Home of original wallpapers designed with love, made by Mirac" />
-	<meta property="og:image" content={data.header} />
+	<meta property="og:image" content={data.assets.banner} />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
@@ -245,6 +229,6 @@
 	<meta
 		property="twitter:description"
 		content="Home of original wallpapers designed with love, made by Mirac" />
-	<meta property="twitter:image" content={data.header} />
+	<meta property="twitter:image" content={data.assets.banner} />
 	<meta name="twitter:image:alt" content="Mirac Logo Card" />
 </svelte:head>

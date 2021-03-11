@@ -18,7 +18,8 @@
 					<img
 						src="assets/icons/github.png"
 						alt="github"
-						id="githubicon" />
+						id="githubicon"
+					/>
 				</a>
 			</div>
 		</div>

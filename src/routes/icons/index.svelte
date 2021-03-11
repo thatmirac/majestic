@@ -1,42 +1,42 @@
 <script context="module" lang="ts">
 	export async function preload() {
-		const res = await this.fetch('api/wallpapers');
-		const lookup: { data: [{ id: string, name: string, preview: string }]} = await res.json();
-		const wallpapers = lookup.data.map(object => {
+		const res = await this.fetch('api/icons');
+		const lookup: { data: [{ name: string, preview: string, asset: string }]} = await res.json();
+		const icons = lookup.data.map(object => {
 			return {
-				id: object.id,
 				name: object.name,
-				preview: `https://cms.atale.me/assets/${object.preview}?width=256&height=256&quality=50`
+				preview: `https://cms.atale.me/assets/${object.preview}?quality=50`,
+				asset: `https://cms.atale.me/assets/${object.asset}?download`
 			}
 		});
 	
-		return { wallpapers };
+		return { icons };
 	}
 </script>
 
 <script lang="ts">
-	export let wallpapers: [{ id: string, name: string, preview: string }];
+	export let icons: [{ name: string, preview: string, asset: string }];
 </script>
 
-<div class="showcase">
-	<span>
-		<h1>WALLPAPERS</h1>
-		<h2>made by Mirac</h2>
-	</span>
-</div>
-<div class="wallprev-container">
-	<div class="wallprev">
-		{#each wallpapers as post}
-			<a rel="prefetch" href={`wallpapers/${post.id}`}>
-				<img
-					src={post.preview}
-					alt={post.name}
-					width=256
-					height=256
-				/>
-			</a>
+<div class="icons-container">
+	<div class="mobile-notice">
+		<img src="./assets/info.svg" alt="Information" id="info">
+		<p>To download an icon, please visit this page on a desktop computer.</p>
+	</div>
+	<h1>ICONS</h1>
+	<div class="icon-grid">
+		{#each icons as icon}
+			<div id="interaction-prevention" />
+			<div class="icon">
+				<a href={icon.asset} download={`${icon.name}.icns`}> <!--needs download link-->
+					<img src={icon.preview} alt={`${icon.name} preview`} />
+					<p id="name">{icon.name}</p>
+					<p id="download-hint">GET</p>
+				</a>
+			</div>
 		{/each}
 	</div>
+	
 	<div class="copyright-notice">
 		<p>All madebymirac content is for personal use only and may not be redistributed or used for any sort of commercial purpose.</p>
 	</div>
