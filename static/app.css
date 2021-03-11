@@ -920,6 +920,22 @@ header {
 	.top-image-overlay {
 		background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
 	}
+	.icons-container {
+		color: rgba(255, 255, 255, 0.95);
+	}
+	.icon {
+		background: rgba(255, 255, 255, 0.06);
+	}
+	#name {
+		color: rgba(255, 255, 255, 0.336);
+	}
+	
+	#download-hint {
+		color: rgba(255, 255, 255, 0.9);
+	}
+	.icon:hover {
+        background: rgba(255, 255, 255, 0.06);
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -1008,4 +1024,20 @@ header {
 	.top-image-overlay {
 		background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
 	}
+	.icons-container {
+		color: rgba(0, 0, 0, 0.95);
+	}
+	.icon {
+		background: rgba(0, 0, 0, 0.06);
+	}
+	#name {
+		color: rgba(0, 0, 0, 0.336);
+	}
+	
+	#download-hint {
+		color: rgba(0, 0, 0, 0.9);
+	}
+	.icon:hover {
+        background: rgba(0, 0, 0, 0.06);
+    }
 }
