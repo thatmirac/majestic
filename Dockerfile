@@ -9,4 +9,4 @@ RUN yarn install
 
 COPY . .
 RUN yarn build
-ENTRYPOINT [ "yarn", "node", "__sapper__/build" ]
+ENTRYPOINT [ "yarn", "start" ]

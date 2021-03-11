@@ -17,4 +17,4 @@ jobs:
               run: docker build -t mirac/majestic .
 
             - name: Run the new Docker container
-              run: docker run -d -p 8035:3000 --name majestic -e "PORT=3000" --restart unless-stopped mirac/majestic
+              run: docker run -d -p 8035:3000 --name majestic -e "DIRECTUS_BEARER=${{ secrets.DIRECTUS_BEARER }}" --restart unless-stopped mirac/majestic
