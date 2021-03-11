@@ -50,33 +50,33 @@
 
 <svelte:head>
 	<!-- Primary Meta Tags -->
-	<title>Wallpapers | madebymirac.com</title>
-	<link rel="canonical" href="https://madebymirac.com/wallpapers" />
-	<meta name="title" content="Wallpapers | madebymirac.com" />
+	<title>Icons | madebymirac.com</title>
+	<link rel="canonical" href="https://madebymirac.com/icons" />
+	<meta name="title" content="Icons | madebymirac.com" />
 	<meta
 		name="description"
-		content="Home of original wallpapers designed with love, made by Mirac" />
+		content="Original madebymirac icons for your Mac" />
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://madebymirac.com/wallpapers" />
-	<meta property="og:title" content="Wallpapers | madebymirac.com" />
+	<meta property="og:url" content="https://madebymirac.com/icons" />
+	<meta property="og:title" content="Icons | madebymirac.com" />
 	<meta
 		property="og:description"
-		content="Home of original wallpapers designed with love, made by Mirac" />
+		content="Original madebymirac icons for your Mac" />
 	<meta
 		property="og:image"
 		content="https://madebymirac.com/assets/card.jpg" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://madebymirac.com/wallpapers" />
-	<meta property="twitter:title" content="Wallpapers | madebymirac.com" />
+	<meta property="twitter:url" content="https://madebymirac.com/icons" />
+	<meta property="twitter:title" content="Icons | madebymirac.com" />
 	<meta name="twitter:creator" content="@thatmirac" />
 	<meta name="twitter:creator:id" content="1153786059718889472" />
 	<meta
 		property="twitter:description"
-		content="Home of original wallpapers designed with love, made by Mirac" />
+		content="Original madebymirac icons for your Mac" />
 	<meta
 		property="twitter:image"
 		content="https://madebymirac.com/assets/card.jpg" />
