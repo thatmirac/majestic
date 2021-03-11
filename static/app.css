@@ -794,7 +794,7 @@ header {
 
     .icons-container {
 		width: 100%;
-		margin-top: 72px;
+		margin-top: 68px;
 		margin-left: 0;
 		margin-right: 0;
         padding: 0 12px 0 12px;
@@ -1039,5 +1039,18 @@ header {
 	}
 	.icon:hover {
         background: rgba(0, 0, 0, 0.06);
+    }
+	.mobile-notice {
+        background: rgba(0, 0, 0, 0.06);
+    }
+
+    .mobile-notice p {
+        color: rgba(0, 0, 0, 0.336);
+
+    }
+
+    #info {
+        filter: invert(1);
+		-webkit-filter: invert(1);
     }
 }
