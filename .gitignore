@@ -1,8 +1,8 @@
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
-.pnp.*
-src/node_modules/@sapper/
+/.yarn/*
+!/.yarn/releases
+!/.yarn/plugins
+!/.yarn/sdks
+/.pnp.*
+
+src/node_modules/
 __sapper__/
