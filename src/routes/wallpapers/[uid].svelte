@@ -38,7 +38,7 @@
 		let credit_message: string;
 		let credit_author: string;
 		if (data.credits && data.credits.text) {
-			credit_message = data.credits.text.substring(0, data.credits.text.indexOf('{') + 1)
+			credit_message = data.credits.text.substring(0, data.credits.text.indexOf('{'))
 			credit_author = data.credits.text.substring(data.credits.text.indexOf('{') + 1, data.credits.text.indexOf('}'))
 		}
 
