@@ -1,67 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-		<meta name="theme-color" content="#000000" />
 
-		%sapper.base%
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<meta name="theme-color" content="#000000" />
 
-		<link rel="stylesheet" type="text/css" href="app.css" />
-		<link
-			rel="manifest"
-			href="manifest.json"
-			crossorigin="use-credentials"
-		/>
-		<link rel="icon" type="image/png" href="assets/favicon.png" />
-		<link
-			rel="apple-touch-icon"
-			type="image/png"
-			href="assets/icons/apple-touch-icon.png"
-		/>
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-		<link
-			rel="apple-touch-startup-image"
-			href="assets/splash/launch-640x1136.png"
-			media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="assets/splash/launch-750x1294.png"
-			media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="assets/splash/launch-1242x2148.png"
-			media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="assets/splash/launch-1125x2436.png"
-			media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="assets/splash/launch-1536x2048.png"
-			media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="assets/splash/launch-1668x2224.png"
-			media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
-		<link
-			rel="apple-touch-startup-image"
-			href="assets/splash/launch-2048x2732.png"
-			media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)"
-		/>
+	%sapper.base%
 
-		%sapper.styles% %sapper.head%
-	</head>
+	<link rel="stylesheet" type="text/css" href="app.css" />
+	<link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
+	<link rel="icon" type="image/png" href="assets/favicon.png" />
+	<link rel="apple-touch-icon" type="image/png" href="assets/icons/apple-touch-icon.png" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+	<link rel="apple-touch-startup-image" href="assets/splash/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+	<link rel="apple-touch-startup-image" href="assets/splash/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+	<link rel="apple-touch-startup-image" href="assets/splash/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+	<link rel="apple-touch-startup-image" href="assets/splash/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
+	<link rel="apple-touch-startup-image" href="assets/splash/launch-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)" />
+	<link rel="apple-touch-startup-image" href="assets/splash/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)" />
+	<link rel="apple-touch-startup-image" href="assets/splash/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)" />
 
-	<body>
-		<div id="app">%sapper.html%</div>
-		%sapper.scripts%
-	</body>
+	%sapper.scripts%
+	%sapper.styles%
+	%sapper.head%
+</head>
+
+<body>
+	<div id="app">%sapper.html%</div>
+</body>
+
 </html>
