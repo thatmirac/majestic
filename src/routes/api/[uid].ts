@@ -31,7 +31,7 @@ export async function get(req, res, next) {
 	fetch(`https://cms.atale.me/items/wallpapers/${uid}?fields=*,*.directus_files_id,*.wallpapers_id,*.id,related.wallpapers_related_id.id,related.wallpapers_related_id.preview`, {
 		headers: {
 			'Authorization': `Bearer ${process.env.DIRECTUS_BEARER}`,
-			'User-Agent': 'Majestic/1.0 (+https://atale.me/go/ua)'
+			'User-Agent': 'Majestic/1.0 (+https://atale.me/go/ua#majestic)'
 		}
 	})
 		.then(res => res.json())
@@ -87,41 +87,3 @@ function formatted_date(date: Date): string {
 	const day = date.getDate().toString().padStart(2, '0');
 	return `${day}.${month}.${date.getFullYear()}`
 }
-
-// function related_values(related: (RelatedEntity)[]) {
-// 	const related_previews = [];
-// 	const promises = related.map(object => {
-// 		return new Promise(resolve, reject) {
-
-// 		}
-// 	})
-// 	for (const object of related) {
-// 		fetch(`https://cms.atale.me/items/wallpapers/${object.wallpapers_related_id}?fields=preview`, {
-// 			headers: {
-// 			'Authorization': `Bearer ${process.env.DIRECTUS_BEARER}`,
-// 			'User-Agent': 'Majestic/1.0 (+https://atale.me/go/ua)'
-// 			}
-// 		})
-// 		.then(res => res.json())
-// 		.then(data => {
-// 			related_previews.push({
-// 				id: object.wallpapers_related_id,
-// 				preview: data.data.preview
-// 			})
-// 		})
-// 	}
-	
-
-// 	return related_previews;
-// }
-
-// async function get_preview(object: RelatedEntity): Promise<{ id: string; preview: string; }> {
-// 	const result = await 
-
-// 	const data = await result.json();
-
-// 	return {
-// 		id: object.wallpapers_related_id,
-// 		preview: data.data.preview
-// 	}
-// }
