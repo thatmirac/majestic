@@ -1,10 +1,10 @@
 import fetch from 'node-fetch';
 
 export async function get(req, res, next) {
-	fetch('https://cms.atale.me/items/icons?fields=name,preview,asset&sort=name', {
+	fetch('https://cms.tale.me/items/icons?fields=name,preview,asset&sort=name', {
 		headers: {
 			'Authorization': `Bearer ${process.env.DIRECTUS_BEARER}`,
-			'User-Agent': 'Majestic/1.0 (+https://atale.me/go/ua)'
+			'User-Agent': 'Majestic/1.0 (+https://tale.me/go/ua#majestic)'
 		}
 	})
 		.then(res => res.json())

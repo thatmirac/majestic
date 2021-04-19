@@ -5,8 +5,8 @@
 		const icons = lookup.data.map(object => {
 			return {
 				name: object.name,
-				preview: `https://cms.atale.me/assets/${object.preview}?quality=50`,
-				asset: `https://cms.atale.me/assets/${object.asset}?download`
+				preview: `https://cms.tale.me/assets/${object.preview}?quality=50`,
+				asset: `https://cms.tale.me/assets/${object.asset}?download`
 			}
 		});
 	

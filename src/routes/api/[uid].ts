@@ -28,10 +28,10 @@ export interface RelatedEntity {
 
 export async function get(req, res, next) {
 	const uid = req.params.uid
-	fetch(`https://cms.atale.me/items/wallpapers/${uid}?fields=*,*.directus_files_id,*.wallpapers_id,*.id,related.wallpapers_related_id.id,related.wallpapers_related_id.preview`, {
+	fetch(`https://cms.tale.me/items/wallpapers/${uid}?fields=*,*.directus_files_id,*.wallpapers_id,*.id,related.wallpapers_related_id.id,related.wallpapers_related_id.preview`, {
 		headers: {
 			'Authorization': `Bearer ${process.env.DIRECTUS_BEARER}`,
-			'User-Agent': 'Majestic/1.0 (+https://atale.me/go/ua#majestic)'
+			'User-Agent': 'Majestic/1.0 (+https://tale.me/go/ua#majestic)'
 		}
 	})
 		.then(res => res.json())
@@ -50,21 +50,21 @@ export async function get(req, res, next) {
 						related: lookup.related.map(related => {
 							return {
 								id: related.wallpapers_related_id.id,
-								asset: `https://cms.atale.me/assets/${related.wallpapers_related_id.preview}?quality=80` 
+								asset: `https://cms.tale.me/assets/${related.wallpapers_related_id.preview}?quality=80` 
 							}
 						}),
 						assets: {
-							banner: `https://cms.atale.me/assets/${lookup.banner.id}?quality=80`,
-							mobile: lookup.mobile_asset ? `https://cms.atale.me/assets/${lookup.mobile_asset.id}` : null,
-							desktop: lookup.desktop_asset ? `https://cms.atale.me/assets/${lookup.desktop_asset.id}` : null,
+							banner: `https://cms.tale.me/assets/${lookup.banner.id}?quality=80`,
+							mobile: lookup.mobile_asset ? `https://cms.tale.me/assets/${lookup.mobile_asset.id}` : null,
+							desktop: lookup.desktop_asset ? `https://cms.tale.me/assets/${lookup.desktop_asset.id}` : null,
 							screenshots: lookup.screenshots.map(screenshot => {
-								return { id: `https://cms.atale.me/assets/${screenshot.directus_files_id}?quality=80` }
+								return { id: `https://cms.tale.me/assets/${screenshot.directus_files_id}?quality=80` }
 							})
 						},
 						credits: {
 							text: lookup.text || null,
 							link: lookup.link || null,
-							image: lookup.picture ? `https://cms.atale.me/assets/${lookup.picture.id}?quality=80` : null
+							image: lookup.picture ? `https://cms.tale.me/assets/${lookup.picture.id}?quality=80` : null
 						}
 					}
 				}))
