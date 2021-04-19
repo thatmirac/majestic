@@ -17,4 +17,4 @@ jobs:
               run: docker rm -f majestic
 
             - name: Run the new Docker container
-              run: docker run -d -p 8035:3000 --name majestic -e "DIRECTUS_BEARER=${{ secrets.DIRECTUS_BEARER }}" --restart unless-stopped mirac/majestic
+              run: docker run -d -p 8035:3000 --name majestic -e "DIRECTUS_BEARER=${{ secrets.DIRECTUS_BEARER }}" -e "CLOUDFLARE_BEARER=${{ secrets.CLOUDFLARE_BEARER }}" -e "CLOUDFLARE_ZONE=${{ secrets.CLOUDFLARE_ZONE }}" --restart unless-stopped mirac/majestic
