@@ -31,7 +31,8 @@ export async function get(req, res, next) {
 	fetch(`https://cms.tale.me/items/wallpapers/${uid}?fields=*,*.directus_files_id,*.wallpapers_id,*.id,related.wallpapers_related_id.id,related.wallpapers_related_id.preview`, {
 		headers: {
 			'Authorization': `Bearer ${process.env.DIRECTUS_BEARER}`,
-			'User-Agent': 'Majestic/1.0 (+https://tale.me/go/ua#majestic)'
+			'User-Agent': 'Majestic/1.0 (+https://tale.me/go/ua#majestic)',
+			'Cache-Control': 'no-cache'
 		}
 	})
 		.then(res => res.json())
