@@ -133,9 +133,7 @@
 			<h1>Preview</h1>
 		</div>
 		<div class="screenshots-wrapper">
-			{#each data.assets.screenshots as shot}
-				<img src={shot.id} alt={`${data.name} Image`} />
-			{/each}
+			<img src={data.assets.screenshots[3].id} alt={`${data.name} Image`} />
 			<div class="spacer" />
 		</div>
 	</div>
