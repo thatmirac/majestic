@@ -5,11 +5,11 @@
 		const icons = lookup.data.map(object => {
 			return {
 				name: object.name,
-				preview: `https://cms.tale.me/assets/${object.preview}?quality=50`,
-				asset: `https://cms.tale.me/assets/${object.asset}?download`
+				preview: `https://directus.tale.me/assets/${object.preview}?quality=50`,
+				asset: `https://directus.tale.me/assets/${object.asset}?download`
 			}
 		});
-	
+
 		return { icons };
 	}
 </script>
@@ -36,7 +36,7 @@
 			</div>
 		{/each}
 	</div>
-	
+
 	<div class="copyright-notice">
 		<p>All madebymirac content is for personal use only and may not be redistributed or used for any sort of commercial purpose.</p>
 	</div>

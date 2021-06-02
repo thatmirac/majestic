@@ -6,10 +6,10 @@
 			return {
 				id: object.id,
 				name: object.name,
-				preview: `https://cms.tale.me/assets/${object.preview}?width=256&height=256&quality=50`
+				preview: `https://directus.tale.me/assets/${object.preview}?width=256&height=256&quality=50`
 			}
 		});
-	
+
 		return { wallpapers };
 	}
 </script>
