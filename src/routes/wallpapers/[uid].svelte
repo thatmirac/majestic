@@ -10,7 +10,6 @@
 	interface Credits {
 		text: string;
 		link: string;
-		image: string;
 	}
 
 	interface Assets {
@@ -50,7 +49,7 @@
 	import { stores } from '@sapper/app';
 	import Parser from 'ua-parser-js';
 
-	const { preloading, page, session } = stores();
+	const { session } = stores();
 	const parser = new Parser();
 	parser.setUA($session['user-agent']);
 
@@ -67,18 +66,13 @@
 	interface Credits {
 		text: string;
 		link: string;
-		image: string;
 	}
 
 	interface Assets {
 		banner: string;
 		mobile?: string;
 		desktop?: string;
-		screenshots: Screenshot[];
-	}
-
-	interface Screenshot {
-		id: string;
+		screenshots: string[];
 	}
 
 	interface Related {
@@ -119,7 +113,6 @@
 			<p>{credit_message}</p>
 			<div class="user">
 				<img
-					src={data.credits.image}
 					alt={credit_author} />
 				<a href={data.credits.link}>
 					{credit_author}
@@ -133,15 +126,7 @@
 			<h1>Preview</h1>
 		</div>
 		<div class="screenshots-wrapper">
-			{#if data.assets.screenshots.length === 4}
-			<img src={data.assets.screenshots[3].id} alt={`${data.name} Image`} />
-			<div class="spacer" />
-			{:else}
-				{#each data.assets.screenshots as screenshot }
-					<img src={screenshot.id} alt={`${data.name} Image`} />
-					<div class="spacer" />
-				{/each}
-			{/if}
+			<img src={data.assets.screenshots[0]} alt={`${data.name} Image`} />
 		</div>
 	</div>
 	<div class="seperator" />
