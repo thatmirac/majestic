@@ -3,18 +3,18 @@
 		<h1>CREDITS</h1>
 	</div>
 	<div class="credits-credits-section">
-		<img src="assets/profiles/renai.png" alt="profile" id="renaiprofile" />
+		<img src="assets/profiles/tale.jpg" alt="profile" />
 		<div class="credits-text">
 			<p>B A C K E N D &nbsp; D E V E L O P M E N T</p>
-			<h1>Renaitare</h1>
+			<h1>Aarnav Tale</h1>
 			<div class="social-links">
-				<a href="mailto:support@renai.me">
+				<a href="mailto:aarnav@tale.me">
 					<img src="assets/icons/mail.png" alt="mail" />
 				</a>
-				<a href="https://twitter.com/Renaitare">
+				<a href="https://twitter.com/aarnavtale">
 					<img src="assets/icons/twitter.png" alt="twitter" />
 				</a>
-				<a href="https://github.com/Renaitare">
+				<a href="https://github.com/tale">
 					<img
 						src="assets/icons/github.png"
 						alt="github"

@@ -535,7 +535,7 @@ header {
     padding: 0 24px 0 24px;
 }
 
-.icons-container h1 { 
+.icons-container h1 {
     margin-bottom: 22px;
     font-size: 18pt;
     font-weight: bolder;
@@ -666,7 +666,7 @@ header {
 	.wallprev img:hover {
 		transform: none;
 	}
-	
+
 	.wallprev img:active {
 		opacity: 50%;
 	}
@@ -683,10 +683,10 @@ header {
 	.related-wrapper img:hover {
 		transform: none;
 	}
-	
+
 	.related-wrapper img:active {
 		transform: none;
-	}	
+	}
 
 	.download-button:active {
 		transform: none;
@@ -800,7 +800,7 @@ header {
         padding: 0 12px 0 12px;
 	}
 
-    .icons-container h1 { 
+    .icons-container h1 {
         margin-left: 4px;
     }
 
@@ -808,7 +808,7 @@ header {
         grid-column-gap: 12px;
         grid-row-gap: 12px;
     }
-    
+
     .icon {
         height: 196px;
         background: rgba(255, 255, 255, 0.06);
@@ -833,11 +833,11 @@ header {
         transition: none;
         transition-delay: none;
     }
-    
+
     #name {
         font-size: 11pt;
     }
-    
+
     #download-hint {
         display: none;
         transition: none;
@@ -847,19 +847,19 @@ header {
         opacity: 1;
         transition: none;
     }
-    
+
     .icon:hover #download-hint {
         transform: none;
         opacity: 0;
         transition: none;
     }
-    
+
     .icon:hover {
         transform: none;
         background: rgba(255, 255, 255, 0.06);
         transition: none;
     }
-    
+
     .icon:hover img {
         opacity: 1;
         transition: none;
@@ -872,9 +872,7 @@ header {
 	#githubicon {
 		filter: invert(0);
 	}
-	#renaiprofile {
-		filter: invert(1);
-	}
+
 	header {
 		background: rgba(0, 0, 0, 0.8);
 	}
@@ -929,7 +927,7 @@ header {
 	#name {
 		color: rgba(255, 255, 255, 0.336);
 	}
-	
+
 	#download-hint {
 		color: rgba(255, 255, 255, 0.9);
 	}
@@ -1033,7 +1031,7 @@ header {
 	#name {
 		color: rgba(0, 0, 0, 0.336);
 	}
-	
+
 	#download-hint {
 		color: rgba(0, 0, 0, 0.9);
 	}
