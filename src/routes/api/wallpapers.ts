@@ -18,7 +18,7 @@ export async function get(req, res, next) {
 					status: 200,
 					date: new Date().toString(),
 					data: data.data.map(value => {
-						if (value.status === 'Published') return value
+						if (value.status === 'published') return value
 					}).filter(Boolean)
 				}))
 		})
