@@ -866,7 +866,7 @@ header {
     }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 	.logo-container img,
 	#miracprofile,
 	#githubicon {
@@ -1051,4 +1051,4 @@ header {
         filter: invert(1);
 		-webkit-filter: invert(1);
     }
-}
+} */
