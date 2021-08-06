@@ -1,4 +1,4 @@
-FROM node:14 as deploy
+FROM node:14-alpine as deploy
 WORKDIR /app
 
 COPY ./.yarn/ ./.yarn/
