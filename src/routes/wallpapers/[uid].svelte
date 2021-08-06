@@ -133,15 +133,10 @@
 			<h1>Preview</h1>
 		</div>
 		<div class="screenshots-wrapper">
-			{#if data.assets.screenshots.length === 4}
-			<img src={data.assets.screenshots[3].id} alt={`${data.name} Image`} />
-			<div class="spacer" />
-			{:else}
-				{#each data.assets.screenshots as screenshot }
-					<img src={screenshot.id} alt={`${data.name} Image`} />
-					<div class="spacer" />
-				{/each}
-			{/if}
+			{#each data.assets.screenshots as screenshot }
+				<img src={screenshot} alt={`${data.name} Image`} />
+				<div class="spacer" />
+			{/each}
 		</div>
 	</div>
 	<div class="seperator" />

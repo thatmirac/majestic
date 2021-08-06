@@ -5,13 +5,12 @@ export interface Wallpaper {
 	status: string;
 	date: string;
 	name: string;
-	text?: string;
-	link?: string;
-	picture?: { id: string };
-	banner: { id: string };
-	desktop_asset?: { id: string };
-	mobile_asset?: { id: string };
-	screenshots: (ScreenshotsEntity)[];
+	credits_text?: string;
+	credits_link?: string;
+	desktop_preview?: string;
+	desktop_asset?: string;
+	mobile_asset: string;
+	mobile_preview: string;
 	related: (RelatedEntity)[];
 }
 
@@ -20,15 +19,15 @@ export interface ScreenshotsEntity {
 }
 
 export interface RelatedEntity {
-	wallpapers_related_id: {
-		id: string;
-		preview: string;
+	related_mirac_wallpapers_slug: {
+		slug: string;
+		mobile_preview: string;
 	}
 }
 
 export async function get(req, res, next) {
 	const uid = req.params.uid
-	fetch(`https://directus.tale.me/items/wallpapers/${uid}?fields=*,*.directus_files_id,*.wallpapers_id,*.id,related.wallpapers_related_id.id,related.wallpapers_related_id.preview`, {
+	fetch(`https://cms.tale.me/items/mirac_wallpapers/${uid}?fields=*,related.related_mirac_wallpapers_slug.*`, {
 		headers: {
 			'Authorization': `Bearer ${process.env.DIRECTUS_BEARER}`,
 			'User-Agent': 'Majestic/1.0 (+https://tale.me/go/ua#majestic)',
@@ -38,37 +37,37 @@ export async function get(req, res, next) {
 		.then(res => res.json())
 		.then(async (data: { data: Wallpaper }) => {
 			const lookup = data.data;
+
+			const data2 = JSON.stringify({
+				status: 200,
+				date: new Date().toString(),
+				data: {
+					name: lookup.name,
+					date: formatted_date(new Date(lookup.date)),
+					related: lookup.related.map(related => {
+						return {
+							id: related.related_mirac_wallpapers_slug.slug,
+							asset: `https://cms.tale.me/assets/${related.related_mirac_wallpapers_slug.mobile_preview}`
+						}
+					}),
+					assets: {
+						banner: `https://cms.tale.me/assets/${lookup.desktop_preview ?? lookup.mobile_preview}`,
+						mobile: `https://cms.tale.me/assets/${lookup.mobile_asset}`,
+						desktop: lookup.desktop_asset ? `https://cms.tale.me/assets/${lookup.desktop_asset}` : null,
+						screenshots: [`https://cms.tale.me/assets/${lookup.mobile_preview}`]
+					},
+					credits: {
+						text: lookup.credits_text || null,
+						link: lookup.credits_link || null
+					}
+				}
+			})
+
 			res
 				.writeHead(200, {
 					'Content-Type': 'application/json'
 				})
-				.end(JSON.stringify({
-					status: 200,
-					date: new Date().toString(),
-					data: {
-						name: lookup.name,
-						date: formatted_date(new Date(lookup.date)),
-						related: lookup.related.map(related => {
-							return {
-								id: related.wallpapers_related_id.id,
-								asset: `https://directus.tale.me/assets/${related.wallpapers_related_id.preview}?quality=80`
-							}
-						}),
-						assets: {
-							banner: `https://directus.tale.me/assets/${lookup.banner.id}?quality=80`,
-							mobile: lookup.mobile_asset ? `https://directus.tale.me/assets/${lookup.mobile_asset.id}` : null,
-							desktop: lookup.desktop_asset ? `https://directus.tale.me/assets/${lookup.desktop_asset.id}` : null,
-							screenshots: lookup.screenshots.map(screenshot => {
-								return { id: `https://directus.tale.me/assets/${screenshot.directus_files_id}?quality=80` }
-							})
-						},
-						credits: {
-							text: lookup.text || null,
-							link: lookup.link || null,
-							image: lookup.picture ? `https://directus.tale.me/assets/${lookup.picture.id}?quality=80` : null
-						}
-					}
-				}))
+				.end(data2)
 		})
 		.catch(() => {
 			res

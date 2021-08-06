@@ -1,12 +1,12 @@
 <script context="module" lang="ts">
 	export async function preload() {
 		const res = await this.fetch('api/wallpapers');
-		const lookup: { data: [{ id: string, name: string, preview: string }]} = await res.json();
+		const lookup: { data: [{ slug: string, name: string, mobile_preview: string }]} = await res.json();
 		const wallpapers = lookup.data.map(object => {
 			return {
-				id: object.id,
+				id: object.slug,
 				name: object.name,
-				preview: `https://directus.tale.me/assets/${object.preview}?width=256&height=256&quality=50`
+				preview: `https://cms.tale.me/assets/${object.mobile_preview}?width=256&height=256`
 			}
 		});
 
