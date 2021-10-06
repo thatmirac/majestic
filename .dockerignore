@@ -6,3 +6,13 @@
 .pnp.*
 src/node_modules/@sapper/
 __sapper__/
+manifest.yaml
+.dockerignore
+.editorconfig
+.gitattributes
+.gitignore
+.git/
+Dockerfile
+LICENSE
+README.md
+.github

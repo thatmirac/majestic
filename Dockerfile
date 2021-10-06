@@ -1,12 +1,6 @@
-FROM node:14-alpine as deploy
+FROM node:16-alpine
 WORKDIR /app
 
-COPY ./.yarn/ ./.yarn/
-COPY ./.yarnrc.yml .
-COPY ./package.json .
-COPY ./yarn.lock .
-RUN yarn install
-
 COPY . .
-RUN yarn build
+RUN yarn install && yarn build
 ENTRYPOINT [ "yarn", "start" ]
