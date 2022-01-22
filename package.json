@@ -9,7 +9,7 @@
 	},
 	"dependencies": {
 		"compression": "^1.7.4",
-		"node-fetch": "^2.6.1",
+		"node-fetch": "^3.1.1",
 		"polka": "^0.5.2",
 		"sirv": "^1.0.11",
 		"ua-parser-js": "^0.7.24"
